@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-family: inherit;
+  box-sizing: inherit;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+#faq-accordion {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rem 1.25rem 3.5rem;
+  background-image: linear-gradient(#af67e9, #6565e7);
+}
+#faq-accordion .container {
+  position: relative;
+  width: 100%;
+  max-width: 30.625rem;
+  border-radius: 2rem;
+  background-color: white;
+  padding: 0 1.5rem 3rem;
+}
+#faq-accordion .box {
+  display: none;
+}
+#faq-accordion .card-img-container {
+  height: 7.5rem;
+  display: flex;
+  justify-content: center;
+  background-image: url("../assets/bg-pattern-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: 14rem;
+  background-position: center top;
+}
+#faq-accordion .card-img-women {
+  width: 100%;
+  max-width: 15rem;
+  height: max-content;
+  transform: translate(-5%, -55%);
+}
+#faq-accordion .card-img-women.desk {
+  display: none;
+}
+#faq-accordion .accordion {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.8rem;
+}
+#faq-accordion .accordion .title {
+  font-size: 1.875rem;
+  text-align: center;
+  margin: 0.75rem 0 0.5rem;
+}
+#faq-accordion .accordion-item::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #e7e7e9;
+}
+#faq-accordion .accordion-item .heading {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1.25rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #1d1e35;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease-in-out;
+}
+#faq-accordion .accordion-item .heading:hover {
+  cursor: pointer;
+  color: #f47c57;
+}
+#faq-accordion .accordion-item .heading::after {
+  content: "";
+  display: block;
+  min-width: 0.75rem;
+  height: 0.65rem;
+  background-image: url("../assets/icon-arrow-down.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  transition: transform 0.3s ease-in-out;
+}
+#faq-accordion .accordion-content-container {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+}
+#faq-accordion .accordion-item .content {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #4a4b5e;
+  padding-bottom: 1.25rem;
+  padding-right: 1.25rem;
+}
+#faq-accordion .accordion-item.open .heading {
+  font-weight: bold;
+}
+#faq-accordion .accordion-item.open .heading::after {
+  transform: rotate(180deg);
+}
+@media screen and (min-width: 57.5em) {
+  #faq-accordion {
+    padding: 7rem 5rem;
+  }
+  #faq-accordion .container {
+    max-width: 56rem;
+    display: flex;
+    padding: 1rem 0;
+  }
+  #faq-accordion .card-img-container,
+#faq-accordion .accordion {
+    flex: 1;
+  }
+  #faq-accordion .box {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 57%;
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+  #faq-accordion .card-img-container {
+    max-width: 25rem;
+    height: auto;
+    overflow: hidden;
+    justify-content: start;
+    align-items: center;
+    background-image: url("../assets/bg-pattern-desktop.svg");
+    background-size: contain;
+    background-position: -4rem center;
+  }
+  #faq-accordion .card-img-women {
+    max-width: 25rem;
+    height: auto;
+    transform: translate(-4rem, 0);
+  }
+  #faq-accordion .card-img-women.mob {
+    display: none;
+  }
+  #faq-accordion .card-img-women.desk {
+    display: inline-block;
+  }
+  #faq-accordion .accordion {
+    padding: 3rem 4rem 3rem 2rem;
+  }
+  #faq-accordion .accordion .title {
+    font-size: 2rem;
+    text-align: left;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

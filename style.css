@@ -14,6 +14,7 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
+  outline: 0;
   font-family: inherit;
   box-sizing: inherit;
 }
@@ -21,17 +22,43 @@ body {
 #frontend-web-templates {
   width: 100%;
   padding: 1.5rem;
-}
-
-#frontend-web-templates h1 {
-  margin-bottom: 1rem;
-}
-
-#frontend-web-templates h3 {
-  margin-bottom: 1rem;
-}
-
-#frontend-web-templates ol li {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+#frontend-web-templates .template {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+#frontend-web-templates .card {
+  width: 100%;
+  max-width: 300px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 2px solid gray;
+  border-radius: 1.2rem;
+}
+
+#frontend-web-templates .card img {
+  width: 100%;
+  height: auto;
+  line-height: 0;
+  object-fit: cover;
+}
+#frontend-web-templates .card .text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 1rem;
+}
+#frontend-web-templates .card button {
+  cursor: pointer;
+  padding: 0.4rem 1rem;
+  border-radius: 1rem;
+  background-color: hsl(216, 100%, 71%);
 }

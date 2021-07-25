@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-family: inherit;
+  box-sizing: inherit;
+}
+// soft colors
+$soft-red: hsl(14, 88%, 65%);
+$soft-violet: hsl(273, 75%, 66%);
+$soft-blue: hsl(240, 73%, 65%);
+// dark light colors
+$xdkBlue: hsl(238, 29%, 16%);
+$xdkGrayBlue: hsl(237, 12%, 33%);
+$dkGrayBlue: hsl(240, 6%, 50%);
+$liGrayBlue: hsl(240, 5%, 91%);
+
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+#faq-accordion {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rem 1.25rem 3.5rem;
+  background-image: linear-gradient($soft-violet, $soft-blue);
+
+  .container {
+    position: relative;
+    width: 100%;
+    max-width: 30.625rem;
+    border-radius: 2rem;
+    background-color: white;
+    padding: 0 1.5rem 3rem;
+  }
+
+  .box {
+    display: none;
+  }
+
+  .card-img-container {
+    height: 7.5rem;
+    display: flex;
+    justify-content: center;
+    background-image: url("../assets/bg-pattern-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: 14rem;
+    background-position: center top;
+  }
+
+  .card-img-women {
+    width: 100%;
+    max-width: 15rem;
+    height: max-content;
+    transform: translate(-5%, -55%);
+  }
+
+  .card-img-women.desk {
+    display: none;
+  }
+
+  .accordion {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.8rem;
+  }
+
+  .accordion .title {
+    font-size: 1.875rem;
+    text-align: center;
+    margin: 0.75rem 0 0.5rem;
+  }
+
+  .accordion-item::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: $liGrayBlue;
+  }
+
+  .accordion-item .heading {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 1.25rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: $xdkBlue;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .accordion-item .heading:hover {
+    cursor: pointer;
+    color: $soft-red;
+  }
+
+  .accordion-item .heading::after {
+    content: "";
+    display: block;
+    min-width: 0.75rem;
+    height: 0.65rem;
+    background-image: url("../assets/icon-arrow-down.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .accordion-content-container {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+  }
+
+  .accordion-item .content {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: $xdkGrayBlue;
+    padding-bottom: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  // animate accordion
+  .accordion-item.open {
+    .heading {
+      font-weight: bold;
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  @media screen and (min-width: 57.5em) {
+    padding: 7rem 5rem;
+    .container {
+      max-width: 56rem;
+      display: flex;
+      padding: 1rem 0;
+    }
+
+    .card-img-container,
+    .accordion {
+      flex: 1;
+    }
+
+    .box {
+      display: block;
+      position: absolute;
+      z-index: 1;
+      top: 57%;
+      left: 0;
+      transform: translate(-50%, -50%);
+    }
+
+    .card-img-container {
+      max-width: 25rem;
+      height: auto;
+      overflow: hidden;
+      justify-content: start;
+      align-items: center;
+      background-image: url("../assets/bg-pattern-desktop.svg");
+      background-size: contain;
+      background-position: -4rem center;
+    }
+
+    .card-img-women {
+      max-width: 25rem;
+      height: auto;
+      transform: translate(-4rem, 0);
+    }
+
+    .card-img-women.mob {
+      display: none;
+    }
+
+    .card-img-women.desk {
+      display: inline-block;
+    }
+
+    .accordion {
+      padding: 3rem 4rem 3rem 2rem;
+    }
+
+    .accordion .title {
+      font-size: 2rem;
+      text-align: left;
+    }
+  }
+}
