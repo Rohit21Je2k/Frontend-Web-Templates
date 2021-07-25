@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 html {
-  font-size: 100%;
+  font-size: 16px;
   box-sizing: border-box;
 }
 
@@ -34,20 +34,17 @@ body {
 }
 
 #frontend-web-templates .card {
-  width: 100%;
-  max-width: 300px;
+  max-width: 18.75rem;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
   background-color: white;
-  border: 2px solid gray;
+  border: 0.1rem solid gray;
   border-radius: 1.2rem;
+  line-height: 0;
 }
 
 #frontend-web-templates .card img {
   width: 100%;
   height: auto;
-  line-height: 0;
   object-fit: cover;
 }
 #frontend-web-templates .card .text {
@@ -55,10 +52,13 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0.7rem 1rem;
+  line-height: 1;
+  border-top: 0.1rem solid gray;
 }
 #frontend-web-templates .card button {
   cursor: pointer;
   padding: 0.4rem 1rem;
   border-radius: 1rem;
   background-color: hsl(216, 100%, 71%);
+  color: white;
 }
